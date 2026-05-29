@@ -2,50 +2,75 @@
    VARIABLES & RESET
    ============================================= */
 :root {
-    --red:   #ED0000;
-    --blue:  #0630FF;
-    --yellow:#FFF600;
+    --red: #ED0000;
+    --blue: #0630FF;
+    --yellow: #FFF600;
     --black: #000;
     --white: #fff;
-    --grey:  #f4f4f4;
-    --dark:  #111;
+    --grey: #f4f4f4;
+    --dark: #111;
     --dark-card: #1a1a1a;
-    --text-muted: rgba(255,255,255,0.8);
-    --text-muted-dark: rgba(0,0,0,0.45);
+    --text-muted: rgba(255, 255, 255, 0.8);
+    --text-muted-dark: rgba(0, 0, 0, 0.45);
 
     --font-display: 'Bebas Neue', sans-serif;
-    --font-body:    'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
-    --header-h:   90px;
+    --header-h: 90px;
     --section-pad: clamp(60px, 8vw, 120px);
-    --radius:     4px;
+    --radius: 4px;
     --transition: 0.3s ease;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-body);
     color: var(--black);
     background: var(--white);
     overflow-x: hidden;
 }
-img { display: block; width: 100%; height: 100%; object-fit: cover; }
-a { color: inherit; text-decoration: none; }
-ul { list-style: none; }
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
 
 /* =============================================
    HEADER
    ============================================= */
 .header {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     height: var(--header-h);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 clamp(20px, 5vw, 30px);
-    background: rgba(255,255,255,0.97);
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(10px);
     border-bottom: 3px solid var(--red);
     z-index: 100;
@@ -109,14 +134,21 @@ ul { list-style: none; }
 .nav-btn::after {
     content: '';
     position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
     background: var(--red);
     transition: width var(--transition);
 }
 
-.nav-btn:hover { color: var(--red); }
-.nav-btn:hover::after { width: 100%; }
+.nav-btn:hover {
+    color: var(--red);
+}
+
+.nav-btn:hover::after {
+    width: 100%;
+}
 
 .header__burger {
     display: none;
@@ -130,7 +162,8 @@ ul { list-style: none; }
 
 .header__burger span {
     display: block;
-    width: 24px; height: 2px;
+    width: 24px;
+    height: 2px;
     background: var(--black);
     transition: var(--transition);
 }
@@ -157,7 +190,7 @@ ul { list-style: none; }
 .hero__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.65) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.65) 100%);
 }
 
 .hero__content {
@@ -175,7 +208,7 @@ ul { list-style: none; }
     line-height: 0.9;
     color: var(--white);
     letter-spacing: 0.02em;
-    text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* =============================================
@@ -200,7 +233,7 @@ ul { list-style: none; }
 .btn-primary:hover {
     background: var(--blue);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(6,48,255,0.3);
+    box-shadow: 0 8px 24px rgba(6, 48, 255, 0.3);
 }
 
 /* =============================================
@@ -211,9 +244,17 @@ ul { list-style: none; }
     scroll-margin-top: var(--header-h);
 }
 
-.section--white { background: var(--white); }
-.section--grey  { background: var(--grey); }
-.section--dark  { background: var(--dark); }
+.section--white {
+    background: var(--white);
+}
+
+.section--grey {
+    background: var(--grey);
+}
+
+.section--dark {
+    background: var(--dark);
+}
 
 .section__tag {
     display: inline-block;
@@ -243,7 +284,9 @@ ul { list-style: none; }
     line-height: 1;
 }
 
-.section__title--light { color: var(--white); }
+.section__title--light {
+    color: var(--white);
+}
 
 /* =============================================
    LE CLUB
@@ -259,7 +302,7 @@ ul { list-style: none; }
     font-size: clamp(15px, 1.5vw, 18px);
     font-weight: 300;
     line-height: 1.8;
-    color: rgba(0,0,0,0.75);
+    color: rgba(0, 0, 0, 0.75);
 }
 
 .club__images {
@@ -271,17 +314,21 @@ ul { list-style: none; }
     position: absolute;
     border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .club__img--1 {
-    width: 65%; height: 70%;
-    top: 0; right: 0;
+    width: 65%;
+    height: 70%;
+    top: 0;
+    right: 0;
 }
 
 .club__img--2 {
-    width: 55%; height: 60%;
-    bottom: 0; left: 0;
+    width: 55%;
+    height: 60%;
+    bottom: 0;
+    left: 0;
     border: 4px solid var(--white);
 }
 
@@ -299,14 +346,14 @@ ul { list-style: none; }
     border-radius: var(--radius);
     padding: 40px 32px;
     text-align: center;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
     border-top: 4px solid var(--red);
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .horaire-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(237,0,0,0.12);
+    box-shadow: 0 8px 32px rgba(237, 0, 0, 0.12);
 }
 
 .horaire-card__jour {
@@ -320,7 +367,7 @@ ul { list-style: none; }
 .horaire-card__heure {
     font-size: 20px;
     font-weight: 300;
-    color: rgba(0,0,0,0.65);
+    color: rgba(0, 0, 0, 0.65);
     margin-bottom: 16px;
 }
 
@@ -347,7 +394,7 @@ ul { list-style: none; }
 }
 
 .tarif-card {
-    border: 1.5px solid rgba(0,0,0,0.12);
+    border: 1.5px solid rgba(0, 0, 0, 0.12);
     border-radius: var(--radius);
     padding: 40px 32px;
     text-align: center;
@@ -356,13 +403,13 @@ ul { list-style: none; }
 
 .tarif-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .tarif-card--featured {
     border-color: var(--red);
     border-width: 2px;
-    box-shadow: 0 4px 24px rgba(237,0,0,0.15);
+    box-shadow: 0 4px 24px rgba(237, 0, 0, 0.15);
     position: relative;
     top: -12px;
 }
@@ -404,7 +451,7 @@ ul { list-style: none; }
     font-weight: 300;
     padding-left: 18px;
     position: relative;
-    color: rgba(0,0,0,0.75);
+    color: rgba(0, 0, 0, 0.75);
 }
 
 .tarif-card__features li::before {
@@ -482,13 +529,13 @@ ul { list-style: none; }
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .contact__form input,
 .contact__form textarea {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius);
     padding: 14px 18px;
     font-family: var(--font-body);
@@ -502,7 +549,7 @@ ul { list-style: none; }
 
 .contact__form input::placeholder,
 .contact__form textarea::placeholder {
-    color: rgba(255,255,255,0.28);
+    color: rgba(255, 255, 255, 0.28);
 }
 
 .contact__form input:focus,
@@ -523,7 +570,7 @@ ul { list-style: none; }
     gap: 16px;
     font-size: 13px;
     font-weight: 200;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     border-top: 3px solid var(--red);
 }
 
@@ -532,40 +579,96 @@ ul { list-style: none; }
     gap: 32px;
 }
 
-.footer__links a { transition: color var(--transition); }
-.footer__links a:hover { color: var(--yellow); }
+.footer__links a {
+    transition: color var(--transition);
+}
 
-.footer__credit a:hover { color: var(--yellow); }
+.footer__links a:hover {
+    color: var(--yellow);
+}
+
+.footer__credit a:hover {
+    color: var(--yellow);
+}
+
+/* =============================================
+   FORMULAIRE — feedback PHP
+   ============================================= */
+.form-feedback {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    margin-top: 4px;
+    display: none;
+}
+
+.form-feedback--success {
+    display: block;
+    background: rgba(46, 220, 233, 0.15);
+    color: var(--accent);
+    border: 1px solid rgba(46, 220, 233, 0.3);
+}
+
+.form-feedback--error {
+    display: block;
+    background: rgba(255, 80, 80, 0.12);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 80, 80, 0.25);
+}
 
 /* =============================================
    RESPONSIVE
    ============================================= */
 @media (max-width: 900px) {
-    .header__nav { display: none; }
+    .header__nav {
+        display: none;
+    }
+
     .header__nav.open {
         display: flex;
         flex-direction: column;
         position: fixed;
         top: var(--header-h);
-        left: 0; right: 0;
+        left: 0;
+        right: 0;
         background: var(--white);
         padding: 24px clamp(20px, 5vw, 80px);
         border-bottom: 3px solid var(--red);
         gap: 20px;
         z-index: 99;
     }
-    .header__burger { display: flex; }
 
-    .club__layout { grid-template-columns: 1fr; }
-    .club__images { height: 260px; }
+    .header__burger {
+        display: flex;
+    }
+
+    .club__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .club__images {
+        height: 260px;
+    }
 
     .horaires__grid,
-    .tarifs__grid { grid-template-columns: 1fr; }
-    .tarif-card--featured { top: 0; }
+    .tarifs__grid {
+        grid-template-columns: 1fr;
+    }
 
-    .contact__layout { grid-template-columns: 1fr; gap: 40px; }
+    .tarif-card--featured {
+        top: 0;
+    }
 
-    .footer { flex-direction: column; text-align: center; }
+    .contact__layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 /* =============================================
@@ -582,7 +685,18 @@ ul { list-style: none; }
     transform: translateY(0);
 }
 
-.horaire-card:nth-child(2) { transition-delay: 0.1s; }
-.horaire-card:nth-child(3) { transition-delay: 0.2s; }
-.tarif-card:nth-child(2)   { transition-delay: 0.1s; }
-.tarif-card:nth-child(3)   { transition-delay: 0.2s; }
+.horaire-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.horaire-card:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.tarif-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.tarif-card:nth-child(3) {
+    transition-delay: 0.2s;
+}

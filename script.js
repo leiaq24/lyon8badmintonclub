@@ -7,7 +7,6 @@ document.querySelectorAll('[data-target]').forEach(btn => {
         const target = document.getElementById(targetId);
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
-            // Fermer le menu mobile si ouvert
             nav.classList.remove('open');
         }
     });
@@ -23,7 +22,6 @@ burger.addEventListener('click', () => {
     nav.classList.toggle('open');
 });
 
-// Fermer menu si on clique en dehors
 document.addEventListener('click', e => {
     if (!burger.contains(e.target) && !nav.contains(e.target)) {
         nav.classList.remove('open');
@@ -31,46 +29,68 @@ document.addEventListener('click', e => {
 });
 
 /* =============================================
-   HEADER — fond opaque au scroll
+   HEADER — ombre au scroll
    ============================================= */
 const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
-    } else {
-        header.style.boxShadow = 'none';
-    }
+    header.style.boxShadow = window.scrollY > 50
+        ? '0 2px 20px rgba(0,0,0,0.08)'
+        : 'none';
 });
 
 /* =============================================
-   FORMULAIRE — feedback simple
+   FORMULAIRE — envoi via PHP
    ============================================= */
-const form = document.getElementById('contactForm');
+const form     = document.getElementById('contactForm');
+const feedback = document.getElementById('formFeedback');
+
 if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
         e.preventDefault();
+
         const btn = form.querySelector('button[type="submit"]');
-        btn.textContent = 'Message envoyé ✓';
-        btn.style.background = '#1bb8c4';
+
+        // État chargement
+        btn.textContent = 'Envoi en cours…';
         btn.disabled = true;
-        setTimeout(() => {
-            btn.textContent = 'Envoyer le message';
-            btn.style.background = '';
-            btn.disabled = false;
-            form.reset();
-        }, 3000);
+        feedback.textContent = '';
+        feedback.className = 'form-feedback';
+
+        try {
+            const response = await fetch('send.php', {
+                method: 'POST',
+                body: new FormData(form),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                feedback.textContent = data.message;
+                feedback.classList.add('form-feedback--success');
+                form.reset();
+            } else {
+                feedback.textContent = data.message;
+                feedback.classList.add('form-feedback--error');
+            }
+
+        } catch (err) {
+            feedback.textContent = 'Une erreur réseau s\'est produite. Veuillez réessayer.';
+            feedback.classList.add('form-feedback--error');
+        }
+
+        // Réactiver le bouton
+        btn.textContent = 'Envoyer le message';
+        btn.disabled = false;
     });
 }
 
 /* =============================================
-   ANIMATION — apparition au scroll
+   ANIMATIONS — apparition au scroll
    ============================================= */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
     });
 }, { threshold: 0.1 });
 

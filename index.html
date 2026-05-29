@@ -139,12 +139,11 @@
             <div class="contact__info">
                 <div class="section__tag section__tag--light">Contact</div>
                 <h2 class="section__title section__title--light">Contacter-nous</h2>
-                <p class="contact__intro">Vous souhaitez nous rejoindre ou obtenir plus d'informations ? N'hésitez pas à
-                    nous contacter !</p>
+                <p class="contact__intro">Vous souhaitez nous rejoindre ou obtenir plus d'informations ? N'hésitez pas à nous contacter !</p>
                 <div class="contact__details">
                     <div class="contact__detail">
                         <strong>Adresse</strong>
-                        <span>Gymnase ....<br />Lyon 8</span>
+                        <span>Gymnase ....<br/>Lyon 8</span>
                     </div>
                     <div class="contact__detail">
                         <strong>Email</strong>
@@ -158,19 +157,22 @@
             </div>
             <div class="contact__form-wrap">
                 <form class="contact__form" id="contactForm">
+                    <!-- Honeypot anti-spam : invisible pour les humains -->
+                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
                     <label>
                         Nom
-                        <input type="text" placeholder="Votre nom" />
+                        <input type="text" name="nom" placeholder="Votre nom" required />
                     </label>
                     <label>
                         Email
-                        <input type="email" placeholder="votre@email.fr" />
+                        <input type="email" name="email" placeholder="votre@email.fr" required />
                     </label>
                     <label>
                         Message
-                        <textarea rows="6" placeholder="Votre message"></textarea>
+                        <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
                     </label>
                     <button type="submit" class="btn-primary">Envoyer le message</button>
+                    <p class="form-feedback" id="formFeedback"></p>
                 </form>
             </div>
         </div>

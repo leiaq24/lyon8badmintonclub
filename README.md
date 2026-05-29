@@ -1,6 +1,6 @@
-# 🌐 LYON 8 BADMINTON CLUB
+# 🏸 LYON 8 BADMINTON CLUB
 
-> Site vitrine moderne et responsive pour l'association LYON 8 BADMINTON CLUB, visant à présenter le club, les horaires, tarifs et contact du club."
+> Site vitrine pour l'association LYON 8 BADMINTON CLUB, visant à présenter le club, les horaires, tarifs et contact du club."
 
 ---
 

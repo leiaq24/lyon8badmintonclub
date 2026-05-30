@@ -57,7 +57,7 @@ Avant la mise en ligne, ouvrir `send.php` et modifier les lignes suivantes :
 
 ```php
 $config = [
-    'email_destinataire' => 'Lyon8badmintonclub@mail.fr', // adresse qui reçoit les messages
+    'email_destinataire' => 'lyon8badmintonclub@gmail.com', // adresse qui reçoit les messages
     'email_expediteur'   => 'noreply@votredomaine.fr',    // ⚠️ doit exister sur OVH
     'sujet_prefix'       => '[Lyon 8 Badminton Club]',
 ];

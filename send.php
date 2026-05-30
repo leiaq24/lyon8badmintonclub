@@ -3,8 +3,8 @@
    CONFIGURATION — à modifier
    ============================================= */
 $config = [
-    'email_destinataire' => 'leia.quilichini@gmail.com', // adresse qui reçoit les messages
-    'email_expediteur'   => 'leia.quilichini@outlook.fr',      // adresse d'envoi (doit être sur ton domaine OVH)
+    'email_destinataire' => 'lyon8badmintonclub@gmail.com', // adresse qui reçoit les messages
+    'email_expediteur'   => 'lyon8badmintonclub@gmail.com',      // adresse d'envoi (doit être sur ton domaine OVH)
     'sujet_prefix'       => '[Lyon 8 Badminton Club]',    // préfixe dans l'objet du mail
 ];
 

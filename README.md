@@ -6,10 +6,10 @@
 
 ## 🛠️ Technologies & Stack
 
-- **Frontend :** HTML5, CSS3, JavaScript vanilla
+- **Frontend :** HTML5, CSS3, JavaScript
 - **Backend :** PHP (formulaire de contact)
 - **Polices :** Google Fonts (Bebas Neue, Inter)
-- **Hébergement :** OVH (mutualisé)
+- **Hébergement :** OVH Cloud
 
 ---
 
@@ -23,7 +23,11 @@ lyon8badmintonclub/
 ├── style.css                # Styles globaux
 ├── pages.css                # Styles des pages légales
 ├── script.js                # Interactions & formulaire
-└── send.php                 # Traitement du formulaire de contact
+├── send.php                 # Traitement du formulaire de contact
+└── images/                 
+    └── toutes les photos du sites, les logos, etc.
+└── fichiers/
+    └── fichiers utilisés + templates
 ```
 
 ---
@@ -92,11 +96,8 @@ Avant la mise en ligne, pensez à mettre à jour :
 
 - [ ] Adresse exacte du gymnase
 - [ ] Numéro RNA de l'association
-- [ ] Nom du/de la président(e) (mentions légales)
-- [ ] Horaires et niveaux des créneaux réels
-- [ ] Tarifs réels (Tarif 1, 2, 3)
 - [ ] Photos du club (remplacer les images placeholder)
-- [ ] Adresse email expéditrice dans `send.php`
+- [ ] Adresse email expéditrice dans `send.php`s
 
 ---
 

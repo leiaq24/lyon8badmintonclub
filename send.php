@@ -4,7 +4,7 @@
    ============================================= */
 $config = [
     'email_destinataire' => 'lyon8badmintonclub@gmail.com', // adresse qui reçoit les messages
-    'email_expediteur'   => 'leia.quilichini@outlook.fr',      // adresse d'envoi (doit être sur ton domaine OVH)
+    'email_expediteur' => 'contact@lyon8badmintonclub.fr', // osur OVH
     'sujet_prefix'       => '[Lyon 8 Badminton Club]',    // préfixe dans l'objet du mail
 ];
 

@@ -5,7 +5,6 @@
 $config = [
     'email_destinataire' => 'lyon8badmintonclub@gmail.com', // adresse qui reçoit les messages
     'email_expediteur' => 'contact@lyon8badmintonclub.fr', // osur OVH
-    'sujet_prefix'       => '[Lyon 8 Badminton Club]',    // préfixe dans l'objet du mail
 ];
 
 /* =============================================
@@ -86,7 +85,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 /* =============================================
    ENVOI DE L'EMAIL AU CLUB
    ============================================= */
-$sujet = $config['sujet_prefix'] . ' Message de ' . $nom;
+$sujet = 'Message de ' . $nom;
 
 $corps = "Vous avez reçu un nouveau message depuis le site web.\n\n";
 $corps .= "-------------------------------------------\n";
@@ -113,7 +112,7 @@ if (!$envoye) {
 /* =============================================
    EMAIL DE CONFIRMATION À L'UTILISATEUR
    ============================================= */
-$sujet_confirmation = $config['sujet_prefix'] . ' Nous avons bien reçu votre message';
+$sujet_confirmation = ' Nous avons bien reçu votre message';
 
 $corps_confirmation  = "Bonjour " . $nom . ",\n\n";
 $corps_confirmation .= "Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.\n\n";

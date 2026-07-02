@@ -17,9 +17,10 @@
 
 ```
 lyon8badmintonclub/
-├── index.html               # Page principale (one-page)
+├── index.html               # Page principale
 ├── mentions-legales.html    # Page mentions légales
 ├── reglement-interieur.html # Page règlement intérieur
+├── partenaires.html         # Page sponsors
 ├── style.css                # Styles globaux
 ├── pages.css                # Styles des pages légales
 ├── script.js                # Interactions & formulaire
@@ -29,50 +30,31 @@ lyon8badmintonclub/
 └── fichiers/
     └── fichiers utilisés + templates
 ```
-
----
-
-## 🚀 Lancement rapide (local)
-
-> ⚠️ Le formulaire de contact nécessite PHP et ne fonctionnera pas en ouvrant simplement `index.html` dans un navigateur. Pour tester l'intégralité du site en local, utilisez un serveur PHP local.
-
-### Avec PHP intégré
-
-```bash
-# Cloner le projet
-git clone https://github.com/leiaq24/lyon8badmintonclub.git
-cd lyon8badmintonclub
-
-# Lancer le serveur PHP local
-php -S localhost:8000
-```
-
-Puis ouvrir [http://localhost:8000](http://localhost:8000) dans votre navigateur.
-
-### Sans PHP (pages statiques uniquement)
-
-Ouvrez simplement `index.html` dans votre navigateur. Le formulaire de contact ne sera pas fonctionnel mais le reste du site s'affichera correctement.
-
 ---
 
 ## ⚙️ Configuration du formulaire
-
 Avant la mise en ligne, ouvrir `send.php` et modifier les lignes suivantes :
 
 ```php
 $config = [
     'email_destinataire' => 'lyon8badmintonclub@gmail.com', // adresse qui reçoit les messages
-    'email_expediteur'   => 'noreply@votredomaine.fr',    // ⚠️ doit exister sur OVH
-    'sujet_prefix'       => '[Lyon 8 Badminton Club]',
+    'email_expediteur'   => 'contact@lyon8badmintonclub.fr',      // ⚠️ doit exister sur OVH
 ];
 ```
 
-> L'adresse `email_expediteur` doit être une adresse email réelle créée sur votre hébergement OVH, sinon les emails risquent d'être rejetés ou d'atterrir en spam.
+> L'adresse `email_expediteur` doit être une adresse email réelle créée sur votre hébergement OVH (rubrique **Emails** de l'espace client), sinon les emails risquent d'être rejetés ou d'atterrir en spam.
 
 ---
 
 ## 🌐 Mise en ligne sur OVH
 
+### Option A — Déploiement Git (recommandé, méthode actuelle)
+1. Dans l'espace client OVH → **Web Cloud → Hébergements → Multisite**, associez le dépôt GitHub au domaine
+2. Cliquez sur **Déployer Git** pour synchroniser les derniers changements
+3. Vérifiez que `send.php` est bien configuré (voir section ci-dessus)
+4. Testez le formulaire de contact directement en ligne
+
+### Option B — FTP (manuel)
 1. Connectez-vous à votre hébergement via **FTP** (ex. avec [FileZilla](https://filezilla-project.org/))
 2. Déposez tous les fichiers à la racine du répertoire `www/` (ou `public_html/`)
 3. Vérifiez que `send.php` est bien configuré (voir section ci-dessus)
@@ -81,26 +63,15 @@ $config = [
 ---
 
 ## 📄 Pages
-
 | Page | Description |
 |------|-------------|
 | `/` | Accueil — hero, présentation du club, horaires, tarifs, contact |
+| `/partenaires.html` | Devenir partenaire — formules de sponsoring |
 | `/mentions-legales.html` | Mentions légales (loi française) |
 | `/reglement-interieur.html` | Règlement intérieur de l'association |
 
 ---
 
-## ✏️ Contenu à compléter
-
-Avant la mise en ligne, pensez à mettre à jour :
-
-- [ ] Adresse exacte du gymnase
-- [ ] Numéro RNA de l'association
-- [ ] Photos du club (remplacer les images placeholder)
-- [ ] Adresse email expéditrice dans `send.php`s
-
----
 
 ## 👩‍💻 Auteure
-
 Réalisé par **Leia Quilichini** — [leiaquilichini.fr](https://leiaquilichini.fr)

@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Devenir partenaire – Lyon 8 Badminton Club</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="pages.css" />
+    <link rel="icon" type="image/svg+xml" href="images/VOLANT.svg">
+    <link rel="icon" type="image/png" href="images/VOLANT.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;400;500;600;700&display=swap" rel="stylesheet" />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
 </head>
+
 <body>
     <header class="header">
         <div class="header__brand">
@@ -26,6 +31,7 @@
             <a href="index.html#club" class="nav-btn">Le Club</a>
             <a href="index.html#horaires" class="nav-btn">Horaires</a>
             <!-- <a href="index.html#tarifs" class="nav-btn">Tarifs</a> -->
+            <a href="reglement-interieur.html" class="nav-btn">Règlement intérieur</a>
             <a href="index.html#contact" class="nav-btn">Contact</a>
         </nav>
     </header>
@@ -36,8 +42,9 @@
             <div class="section__tag">Partenaires</div>
             <h1 class="section__title">Devenir partenaire</h1>
             <p class="partenaires-intro">
-                Lyon 8 Badminton Club est un club dynamique implanté dans le 8e arrondissement de Lyon. 
-                En nous rejoignant comme partenaire, vous associez votre image à un projet sportif local, avec une visibilité concrète auprès de nos adhérents 
+                Lyon 8 Badminton Club est un club dynamique implanté dans le 8e arrondissement de Lyon.
+                En nous rejoignant comme partenaire, vous associez votre image à un projet sportif local, avec une
+                visibilité concrète auprès de nos adhérents
                 et du grand public.
             </p>
         </div>
@@ -89,68 +96,70 @@
         </div>
 
         <!-- ===== CONTACT ===== -->
-    <section class="section section--dark" id="contact">
-        <div class="contact__layout">
-            <div class="contact__info">
-                <div class="section__tag section__tag--light">Contact</div>
-                <h2 class="section__title section__title--light">Contactez-nous</h2>
-                <p class="contact__intro">Vous souhaitez nous rejoindre ou obtenir plus d'informations ? N'hésitez pas à
-                    nous contacter !</p>
-                <div class="contact__details">
-                    <div class="contact__detail">
-                        <strong>Adresse</strong>
-                        <span>Gymnase ....<br />Lyon 8</span>
-                    </div>
-                    <div class="contact__detail">
-                        <strong>Email</strong>
-                        <a href="mailto:lyon8badmintonclub@gmail.com">
-                            <span>lyon8badmintonclub@gmail.com</span>
-                        </a>
-                    </div>
-
-                    <div class="contact__detail">
-                        <div class="reseaux_sociaux">
-                            <a target="_blank"
-                                href="https://www.instagram.com/rpat30?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                                <span><img class="logo_reseau" src="images/instagram.png" alt="instagram" /></span>
-
+        <section class="section section--dark" id="contact">
+            <div class="contact__layout">
+                <div class="contact__info">
+                    <div class="section__tag section__tag--light">Contact</div>
+                    <h2 class="section__title section__title--light">Contactez-nous</h2>
+                    <p class="contact__intro">Vous souhaitez nous rejoindre ou obtenir plus d'informations ? N'hésitez
+                        pas à
+                        nous contacter !</p>
+                    <div class="contact__details">
+                        <div class="contact__detail">
+                            <strong>Adresse</strong>
+                            <span>Gymnase ....<br />Lyon 8</span>
+                        </div>
+                        <div class="contact__detail">
+                            <strong>Email</strong>
+                            <a href="mailto:lyon8badmintonclub@gmail.com">
+                                <span>lyon8badmintonclub@gmail.com</span>
                             </a>
-                            <a target="_blank"
-                                href="https://www.instagram.com/rpat30?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                                <span><img class="logo_reseau" src="images/facebook.png" alt="facebook" /></span>
+                        </div>
 
-                            </a>
+                        <div class="contact__detail">
+                            <div class="reseaux_sociaux">
+                                <a target="_blank"
+                                    href="https://www.instagram.com/rpat30?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                                    <span><img class="logo_reseau" src="images/instagram.png" alt="instagram" /></span>
+
+                                </a>
+                                <a target="_blank"
+                                    href="https://www.instagram.com/rpat30?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                                    <span><img class="logo_reseau" src="images/facebook.png" alt="facebook" /></span>
+
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="contact__form-wrap">
+                    <form class="contact__form" id="contactForm">
+                        <!-- Honeypot anti-spam : invisible pour les humains -->
+                        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
+                        <label>
+                            Nom
+                            <input type="text" name="nom" placeholder="Votre nom" required />
+                        </label>
+                        <label>
+                            Email
+                            <input type="email" name="email" placeholder="votre@email.fr" required />
+                        </label>
+                        <label>
+                            Message
+                            <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
+                        </label>
+                        <button type="submit" class="btn-primary">Envoyer le message</button>
+                        <p class="form-feedback" id="formFeedback"></p>
+                    </form>
+                </div>
             </div>
-            <div class="contact__form-wrap">
-                <form class="contact__form" id="contactForm">
-                    <!-- Honeypot anti-spam : invisible pour les humains -->
-                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
-                    <label>
-                        Nom
-                        <input type="text" name="nom" placeholder="Votre nom" required />
-                    </label>
-                    <label>
-                        Email
-                        <input type="email" name="email" placeholder="votre@email.fr" required />
-                    </label>
-                    <label>
-                        Message
-                        <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
-                    </label>
-                    <button type="submit" class="btn-primary">Envoyer le message</button>
-                    <p class="form-feedback" id="formFeedback"></p>
-                </form>
-            </div>
-        </div>
-    </section>
+        </section>
     </main>
 
     <footer class="footer">
         <span>2026 Lyon 8 Badminton Club. Tous droits réservés.</span>
-        <span class="footer__credit">Site réalisé par <a href="https://leiaquilichini.fr" target="_blank" rel="noopener">Leia Quilichini</a></span>
+        <span class="footer__credit">Site réalisé par <a href="https://leiaquilichini.fr" target="_blank"
+                rel="noopener">Leia Quilichini</a></span>
         <div class="footer__links">
             <a href="reglement-interieur.html">Règlement intérieur</a>
             <a href="mentions-legales.html">Mentions légales</a>
@@ -158,4 +167,5 @@
     </footer>
 
 </body>
+
 </html>

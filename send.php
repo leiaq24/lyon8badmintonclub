@@ -4,7 +4,7 @@
    ============================================= */
 $config = [
     'email_destinataire' => 'lyon8badmintonclub@gmail.com', // adresse qui reçoit les messages
-    'email_expediteur' => 'contact@lyon8badmintonclub.fr', // osur OVH
+    'email_expediteur' => 'contact@lyon8badmintonclub.fr', // sur OVH
 ];
 
 /* =============================================
